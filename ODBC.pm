@@ -356,8 +356,8 @@ sub GetConnections{
 #   of memory. The default max is 10k and the absolute max is 100k.
 #   This will probably never be used but I put it in because I noticed a fetch()
 #   of a MEMO field in an Access table was something like 4Gig. Maybe I did
-#   something wrong, but after checking several times I decided to impliment
-#   this limit thingie.
+#   something wrong, but after checking several times I decided to implement
+#   this limit thingy.
 ####
 sub SetMaxBufSize{
     my($self, $Size) = @_;
@@ -431,7 +431,7 @@ sub RowCount{
 }
 
 ####
-#   Returns the Statement Close Type -- how does ODBC Close a statment.
+#   Returns the Statement Close Type -- how does ODBC Close a statement.
 #       Types:
 #           SQL_DROP
 #           SQL_CLOSE
@@ -450,7 +450,7 @@ sub GetStmtCloseType{
 }
 
 ####
-#   Sets the Statement Close Type -- how does ODBC Close a statment.
+#   Sets the Statement Close Type -- how does ODBC Close a statement.
 #       Types:
 #           SQL_DROP
 #           SQL_CLOSE
@@ -963,7 +963,7 @@ can always recompile to increase the max limit.)
 
 =item *
 
-You can open a connection by either specifing a DSN or a connection
+You can open a connection by either specifying a DSN or a connection
 string!
 
 =item *
@@ -1264,7 +1264,7 @@ execution of a SQL function. This is helpful for debugging purposes.
 =item GetStmtCloseType ( [ CONNECTION ] )
 
 Returns a string indicating the type of closure that will be used
-everytime the I<hstmt> is freed. See C<SetStmtCloseType> for details.
+every time the I<hstmt> is freed. See C<SetStmtCloseType> for details.
 
 By default, the connection of the current object will be used. If
 C<CONNECTION> is a valid connection number, then it will be used.
