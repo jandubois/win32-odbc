@@ -14,6 +14,9 @@ my %param = (
     OBJECT        => 'CMom$(OBJ_EXT) Constant$(OBJ_EXT) CResults$(OBJ_EXT) ODBC$(OBJ_EXT)',
     XS            => { 'ODBC.xs' => 'ODBC.cpp' },
 );
+if ($Config{'cc'} =~ /^cl/i && (split(/[.]/, $Config{'ccversion'}))[0] >= 19) {
+    $param{LIBS} = 'legacy_stdio_wide_specifiers.lib legacy_stdio_definitions.lib';
+}
 $param{INC} = '-GX'                     if $Config{'cc'} =~ /^cl/i;
 $param{INC} = '-I$Config{incpath}\\mfc' if $Config{'cc'} =~ /^bcc32/i;
 $param{NO_META} = 1 if eval "$ExtUtils::MakeMaker::VERSION" >= 6.10_03;
